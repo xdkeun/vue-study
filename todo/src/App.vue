@@ -1,8 +1,8 @@
 
 <template>
-  <HomePage />
+  <TodoApp />
 </template>
 
 <script setup>
-import HomePage from "@/pages/HomePage.vue";
+import TodoApp from "@/pages/TodoApp.vue";
 </script>
