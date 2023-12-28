@@ -8,9 +8,9 @@
 </template>
 
 <script setup>
-import { ref, defineEmits, watch } from 'vue';
+import { ref, defineEmits } from 'vue';
 
-const emit = defineEmits([]);
+const emit = defineEmits(["add-todo"]);
 
 const addContent = ref("");
 const warning = ref(false);
@@ -24,9 +24,4 @@ const addTodo = () => {
   emit('add-todo', addContent.value);
   addContent.value = ""
 };
-
-// addContent 값이 변경될 때마다 로직을 수행
-watch(addContent, (newValue, oldValue) => {
-  console.log('addContent의 값이', oldValue, '에서', newValue, '로 변했습니다');
-});
 </script>
