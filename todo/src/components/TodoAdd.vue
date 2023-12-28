@@ -4,6 +4,9 @@
     <button @click="addTask">ADD</button>
   </div>
   <p v-if="warning">할 일을 입력하고 추가하세요</p>
+
+  <!-- props를 써먹습니다 -->
+  <p>{{ props.propsValue }}, {{ props.secondPropsValue }}</p>
 </template>
 
 <script setup>
@@ -31,4 +34,8 @@ const addTask = async () => {
 watch(addContent, (newValue, oldValue) => {
   console.log('addContent 의 값이', oldValue, '에서', newValue, '로 변했습니다');
 });
+
+//props를 받아옵니다
+import { defineProps } from 'vue';
+const props = defineProps(["propsValue", "secondPropsValue"])
 </script>
